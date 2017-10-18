@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // component
 import { WorkoutFormComponent } from './components/workout-form/workout-form.component';
+import { WorkoutTypeComponent } from './components/workout-type/workout-type.component';
 
 import { SharedModule } from '../shared/shared.module';
 //Containers
@@ -27,7 +28,8 @@ export const ROUTES: Routes = [
   declarations: [
     WorkoutsComponent,
     WorkoutComponent,
-    WorkoutFormComponent
+    WorkoutFormComponent,
+    WorkoutTypeComponent
   ]
 })
 export class WorkoutsModule {}

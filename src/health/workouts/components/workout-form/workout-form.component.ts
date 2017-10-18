@@ -23,6 +23,12 @@ import { Workout } from './../../../shared/services/workouts/workouts.service';
               Workout name is required
             </div>
           </label>
+          <label>
+            <h3>Type</h3>
+            <workout-type 
+              formControlName="type">
+            </workout-type>
+          </label>
         </div>
 
 
@@ -96,7 +102,8 @@ export class WorkoutFormComponent implements OnChanges{
   remove = new EventEmitter<Workout>();
 
   form = this.fb.group({
-    name: ['', Validators.required]
+    name: ['', Validators.required],
+    type: 'strength'
   })
 
   constructor(
@@ -126,12 +133,12 @@ export class WorkoutFormComponent implements OnChanges{
   //   }
   // }
 
-  // get required() {
-  //   return (
-  //     this.form.get('name').hasError('required') && 
-  //     this.form.get('name').touched
-  //   );
-  // }
+  get required() {
+    return (
+      this.form.get('name').hasError('required') && 
+      this.form.get('name').touched
+    );
+  }
 
   // get ingredients() {
   //   return this.form.get('ingredients') as FormArray;
