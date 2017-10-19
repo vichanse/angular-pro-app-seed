@@ -40,7 +40,7 @@ export class WorkoutTypeComponent  implements ControlValueAccessor{
   }
 
   registerOnChange(fn: Function) {
-    this.onTouch = fn;
+    this.onModelChange = fn;
   }
 
   writeValue(value: string) {
